@@ -1,14 +1,21 @@
-import weatherFetcher from "./callAPI";
+import WeatherModel from "./weatherModel";
 
 // Control app flow
 export default class App {
-  constructor() {
-    this.fetcher = (city, method) => weatherFetcher.fetchData(city, method);
-    this.try();
+  static async init() {
+    const weatherData = await this.gatherData('Angat')
+    console.log(weatherData)
   }
 
-  try() {
-    this.fetcher('Moscow', 'forecast.json').then((data) => console.log(data))
+  static async gatherData(city, method) {
+    try {
+      const fullData = await WeatherModel.fetchData(city, method);
+      const processedData = WeatherModel.processData(fullData);
+      return processedData
+    } catch(e) {
+      return 'Error'
+    }
+    
   }
-  
+
 }
