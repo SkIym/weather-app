@@ -1,0 +1,38 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  height: 100vh;
+  padding: 100px 0;
+  background-image: linear-gradient(45deg, #99E2B4, #88D4AB, #78C6A3, #67B99A, #56AB91, #469D89, #358F80, #248277, #14746F, #036666);
+}
+
+main {
+  display: flex;
+  width: max(60%, 600px);
+  margin: auto;
+  background-color: white;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  justify-content: center;
+  font-size: 3rem;
+  padding: 30px;
+}
+
+#search-area {
+  width: 80%;
+}
+
+#search {
+  padding: 10px;
+  width: 100%;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}

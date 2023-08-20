@@ -1,10 +1,11 @@
 import WeatherModel from "./weatherModel";
+import WeatherView from './view';
 
 // Control app flow
 export default class App {
   static async init() {
     const weatherData = await this.gatherData('Angat')
-    console.log(weatherData)
+    this.displayData(weatherData)
   }
 
   static async gatherData(city, method) {
@@ -16,6 +17,10 @@ export default class App {
       return 'Error'
     }
     
+  }
+
+  static async displayData(data) {
+    WeatherView.displayAll(data)
   }
 
 }
