@@ -33,14 +33,14 @@ class WeatherView {
     dom.condition.textContent = `${this.data.condition}`;
     const icon = new Image();
     icon.src = this.data.icon;
-    dom.icon.innerHTML = '';
+    dom.icon.innerHTML = "";
     dom.icon.appendChild(icon);
   }
 
   displayError(msg) {
     dom.warn.textContent = msg;
     dom.weatherData.style.visibility = "hidden";
-    dom.location.textContent = 'Search for a location'
+    dom.location.textContent = "Search for a location";
   }
 
   resetView() {
@@ -49,11 +49,11 @@ class WeatherView {
   }
 
   showLoading() {
-    dom.loader.classList.add('display');
+    dom.loader.classList.add("display");
   }
 
   hideLoading() {
-    dom.loader.classList.remove('display')
+    dom.loader.classList.remove("display");
   }
 }
 
