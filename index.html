@@ -9,14 +9,37 @@
 <body>
   <main>
     <div id="search-area">
-      Weather
-      <form action="/">
-        <input type="text" name="search" id="search"> 
+      <h2 id="loc"></h2>
+      <form action="/" novalidate>
+        <input type="text" name="search" id="search" required> 
+        <input type="submit" hidden required>
       </form>
+      <p id="warning">
+      </p>
     </div>
-    <div id="warning">
-
+    <div id="weather-data">
+      <div id="temp-container" class="info">
+        <p>Temperature</p>
+        <div id="temp"></div>
+      </div>
+      <div id="feel-container" class="info">
+        <p>Feels like</p>
+        <div id="feels"></div>
+      </div>
+      <div id="uv-container" class="info">
+        <p>UV Index</p>
+        <div id="uv"></div>
+      </div>
+      <div id="humid-container" class="info">
+        <p>Humidity</p>
+        <div id="humidity"></div>
+      </div>
+      <div id="condi-container" class="info">
+        <p>Sky condition</p>
+        <div id="condition"></div>
+      </div>
     </div>
+    <button id="change-unit">To F/C</button>
   </main>
 </body>
 </html>
