@@ -1,4 +1,4 @@
 import App from "./controller";
-import '../style/style.css';
+import "../style/style.css";
 
 App.init();

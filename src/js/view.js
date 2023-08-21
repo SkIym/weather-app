@@ -1,9 +1,8 @@
-import * as dom from './domCollection';
+import * as dom from "./domCollection";
 
 // Render changes in DOM
 
 class WeatherView {
-
   constructor() {
     this.data = null;
   }
@@ -13,21 +12,18 @@ class WeatherView {
     this.resetView();
     this.updateData();
     this.toggleTempUnit();
-    console.log(this.data)
   }
 
   toggleTempUnit(celc = true) {
-
-    if(celc) {
+    if (celc) {
       dom.temp.textContent = `${this.data.temp_c} \xB0C`;
       dom.feel.textContent = `${this.data.feelslike_c} \xB0C`;
-      dom.changeUnit.textContent = 'To Fahrenheit';
+      dom.changeUnit.textContent = "To Fahrenheit";
     } else {
       dom.temp.textContent = `${this.data.temp_f} \xB0F`;
       dom.feel.textContent = `${this.data.feelslike_f} \xB0F`;
-      dom.changeUnit.textContent = 'To Celsius';
+      dom.changeUnit.textContent = "To Celsius";
     }
-
   }
 
   updateData(data) {
@@ -39,16 +35,22 @@ class WeatherView {
 
   displayError(msg) {
     dom.warn.textContent = msg;
-    dom.weatherData.style.visibility = 'hidden';
+    dom.weatherData.style.visibility = "hidden";
   }
 
   resetView() {
-    dom.warn.textContent = '';
-    dom.weatherData.style.visibility = 'visible';
+    dom.warn.textContent = "";
+    dom.weatherData.style.visibility = "visible";
   }
-  
-}
 
+  showLoading() {
+    dom.loader.classList.add('display');
+  }
+
+  hideLoading() {
+    dom.loader.classList.remove('display')
+  }
+}
 
 const weatherView = new WeatherView();
 export default weatherView;

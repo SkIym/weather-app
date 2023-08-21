@@ -1,4 +1,6 @@
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -8,7 +10,19 @@
 body {
   height: 100vh;
   padding: 100px 0;
-  background-image: linear-gradient(45deg, #99E2B4, #88D4AB, #78C6A3, #67B99A, #56AB91, #469D89, #358F80, #248277, #14746F, #036666);
+  background-image: linear-gradient(
+    45deg,
+    #99e2b4,
+    #88d4ab,
+    #78c6a3,
+    #67b99a,
+    #56ab91,
+    #469d89,
+    #358f80,
+    #248277,
+    #14746f,
+    #036666
+  );
 }
 
 main {
@@ -19,7 +33,7 @@ main {
   background-color: white;
   height: 100%;
   border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   align-items: center;
   padding: 30px;
 }
@@ -27,6 +41,8 @@ main {
 #search-area {
   width: 90%;
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
 }
 
 #search {
@@ -35,7 +51,31 @@ main {
   background-color: whitesmoke;
   border: none;
   border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#loading {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid #f0faf4;
+  border-top: 4px solid #99e2b4;
+  border-radius: 100%;
+  visibility: hidden;
+  animation: spin 1s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  align-self: center;
+}
+
+#loading.display {
+  visibility: visible;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .info {
