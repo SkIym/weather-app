@@ -10,15 +10,26 @@
   <main>
     <div id="search-area">
       <h2 id="loc"></h2>
-      <form action="/" novalidate>
-        <input type="text" name="search" id="search" required> 
-        <input type="submit" hidden required>
-      </form>
-      <p id="warning">
-      </p>
-      <div id="loading"></div>
+      <div style="display: flex; gap: 20px; align-items: center;">
+        <form action="/" novalidate>
+          <input type="text" name="search" id="search" required placeholder="Enter location"> 
+          <input type="submit" hidden required>
+        </form>
+        <p id="warning">
+        </p>
+        <div id="loading"></div>
+      </div>
     </div>
     <div id="weather-data">
+      <div id="condi-container" class="info">
+        <div>
+          <p style="font-size: 1.2rem;">Sky condition</p>
+          <div id="condition"></div>
+        </div>
+        <div id="condi-icon">
+
+        </div>
+      </div>
       <div id="temp-container" class="info">
         <p>Temperature</p>
         <div id="temp"></div>
@@ -34,10 +45,6 @@
       <div id="humid-container" class="info">
         <p>Humidity</p>
         <div id="humidity"></div>
-      </div>
-      <div id="condi-container" class="info">
-        <p>Sky condition</p>
-        <div id="condition"></div>
       </div>
     </div>
     <button id="change-unit">To F/C</button>

@@ -10,6 +10,7 @@ export default class WeatherModel {
         throw new Error();
       }
       const weatherData = await response.json();
+      console.log(weatherData)
       return weatherData;
     } catch (e) {
       throw new Error();
@@ -28,6 +29,7 @@ export default class WeatherModel {
       name: data.location.name,
       country: data.location.country,
       time: data.location.localtime,
+      icon: data.current.condition.icon,
     };
     return processedData;
   }

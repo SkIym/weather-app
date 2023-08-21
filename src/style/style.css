@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carme&display=swap');
+
 *,
 ::after,
 ::before {
@@ -5,6 +8,7 @@
   margin: 0;
   padding: 0;
   outline: none;
+  font-family: 'Carme', sans-serif;
 }
 
 body {
@@ -23,6 +27,9 @@ body {
     #14746f,
     #036666
   );
+  background-image: url(../assets/calm-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
@@ -30,35 +37,48 @@ main {
   flex-direction: column;
   width: max(60%, 600px);
   margin: auto;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.258);
   height: 100%;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   align-items: center;
-  padding: 30px;
+  padding: 40px;
+  gap: 20px;
 }
 
 #search-area {
-  width: 90%;
-  border: 1px solid black;
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+form {
+  flex: 1;
 }
 
 #search {
   padding: 10px;
   width: 100%;
-  background-color: whitesmoke;
+  background-color: rgba(255, 255, 255, 0.379);
   border: none;
   border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+#warning {
+  color: rgb(255, 146, 146);
+}
+
 #loading {
-  width: 2rem;
-  height: 2rem;
-  border: 3px solid #f0faf4;
-  border-top: 4px solid #99e2b4;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid rgb(98, 98, 98);
+  border-top: 2px solid white;
   border-radius: 100%;
   visibility: hidden;
   animation: spin 1s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -78,6 +98,57 @@ main {
   }
 }
 
+#weather-data {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 14px;
+}
+
 .info {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.19);
+}
+
+.info > p {
+  font-size: 1.2rem;
+}
+
+.info:first-child {
+  grid-column: 1 /3;
+  background-color: transparent;
+  box-shadow: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+.info > div {
+  font-size: 2rem;
+}
+
+button {
+  padding: 10px;
+  width: 120px;
+  background-color: #caf9da;
+  border: 1px solid #036666;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+button:active {
+  transform: scale(0.97);
 }

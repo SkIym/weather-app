@@ -9,6 +9,7 @@ export const feel = document.getElementById("feels");
 export const uv = document.getElementById("uv");
 export const humidity = document.getElementById("humidity");
 export const condition = document.getElementById("condition");
+export const icon = document.getElementById('condi-icon')
 
 export const changeUnit = document.getElementById("change-unit");
 

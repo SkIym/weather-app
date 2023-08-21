@@ -31,11 +31,16 @@ class WeatherView {
     dom.uv.textContent = `${this.data.uv}`;
     dom.humidity.textContent = `${this.data.humidity}`;
     dom.condition.textContent = `${this.data.condition}`;
+    const icon = new Image();
+    icon.src = this.data.icon;
+    dom.icon.innerHTML = '';
+    dom.icon.appendChild(icon);
   }
 
   displayError(msg) {
     dom.warn.textContent = msg;
     dom.weatherData.style.visibility = "hidden";
+    dom.location.textContent = 'Search for a location'
   }
 
   resetView() {
